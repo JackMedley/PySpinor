@@ -1,8 +1,12 @@
 #
-# Non PySpinor imports
+# Silly splash message
 #
 
 print "\n*** Welcome to PySpinor, the one-stop-shop for all your field theory needs ***\n"
+
+#
+# Non PySpinor imports
+#
 
 import numpy as np
 from   Common import *

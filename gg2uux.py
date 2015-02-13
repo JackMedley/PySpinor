@@ -2,6 +2,8 @@
 
 # Import spinor library
 import PySpinor as pys
+from   PySpinor import Common
+from   Common   import *
 
 #
 # Define momenta and spinors
@@ -48,7 +50,7 @@ print "   -> A_s = ", A_s[pol]
 term_4  = pys.Current(u_2.bar(), 'mu', u_a('+')).dot(Gluon_b) * pys.Current(u_a.bar('+'), 'mu', v_1).dot(Gluon_a)
 term_4 += pys.Current(u_2.bar(), 'mu', u_a('-')).dot(Gluon_b) * pys.Current(u_a.bar('-'), 'mu', v_1).dot(Gluon_a)
 
-A_t = - pys.i * term_4 / pys.s(pa, p1)
+A_t = - i * term_4 / pys.s(pa, p1)
 
 print "   -> A_t = ", A_t[pol]
 
@@ -61,7 +63,7 @@ term_5 += pys.Current(u_2.bar(), 'mu', u_a('-')).dot(Gluon_a) * pys.Current(u_a.
 term_6  = pys.Current(u_2.bar(), 'mu', u_2('+')).dot(Gluon_a) * pys.Current(u_2.bar('+'), 'mu', v_1).dot(Gluon_b)
 term_6 += pys.Current(u_2.bar(), 'mu', u_2('-')).dot(Gluon_a) * pys.Current(u_2.bar('-'), 'mu', v_1).dot(Gluon_b)
 
-A_u = pys.i * (term_5 - term_6) / pys.s(pa, p2)
+A_u = i * (term_5 - term_6) / pys.s(pa, p2)
 
 print "   -> A_u = ", A_u[pol]
 
@@ -74,8 +76,8 @@ j1 = []
 
 for pol in pols:
 
-	j0.append((- pys.i * A_s + A_u)[pol])
-	j1.append((  pys.i * A_s + A_t)[pol])
+	j0.append((- i * A_s + A_u)[pol])
+	j1.append((  i * A_s + A_t)[pol])
 
 #
 # Sum over the squared amplitudes with the colour factors and couplings
