@@ -1,21 +1,26 @@
-# __all__ = ["LorentzVector",  "polDictionary", "Spinor", "Momenta", "Current", "spinorString", "Tensor"]
+#
+# Non PySpinor imports
+#
 
+print "\n*** Welcome to PySpinor, your one-stop-shop for all your field theory needs ***\n"
 
 import numpy as np
-from Common import *
-from copy import deepcopy
+from   Common import *
+from   copy   import deepcopy
+
+#
+# PySpinor imports
+#
 
 # Parent classes
 from LorentzVector import LorentzVector
 from polDictionary import polDictionary
-from Spinor import Spinor
-from spinorString import spinorString
+from spinorString  import spinorString
+from Spinor        import Spinor
+from Momenta       import Momenta
+from Current       import Current
+from Tensor        import Tensor
+from Gluon         import Gluon
 
-# Dependents
-from Momenta import Momenta
-from Current import Current, Gluon
-from Tensor import Tensor
-
+# Utility functions
 from Utility import *
-
-print "\n"
