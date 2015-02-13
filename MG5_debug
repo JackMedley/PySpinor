@@ -1,0 +1,93 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.1.2                 2014-07-03         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set gauge unitary
+set complex_mass_scheme False
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+
+define l- = e- mu-
+define vl = ve vm vt
+define vl~ = ve~ vm~ vt~
+display diagrams
+Traceback (most recent call last):
+  File "/Users/jackmedley/Build/MG5_aMC_v2_1_1/madgraph/interface/extended_cmd.py", line 879, in onecmd
+    return self.onecmd_orig(line, **opt)
+  File "/Users/jackmedley/Build/MG5_aMC_v2_1_1/madgraph/interface/extended_cmd.py", line 872, in onecmd_orig
+    return func(arg, **opt)
+  File "/Users/jackmedley/Build/MG5_aMC_v2_1_1/madgraph/interface/master_interface.py", line 426, in do_display
+    return self.cmd.do_display(self, *args, **opts)
+  File "/Users/jackmedley/Build/MG5_aMC_v2_1_1/madgraph/interface/madgraph_interface.py", line 2714, in do_display
+    self.check_display(args)
+  File "/Users/jackmedley/Build/MG5_aMC_v2_1_1/madgraph/interface/master_interface.py", line 317, in check_display
+    return self.cmd.check_display(self, *args, **opts)
+  File "/Users/jackmedley/Build/MG5_aMC_v2_1_1/madgraph/interface/madgraph_interface.py", line 763, in check_display
+    if (args[0] in ['processes', 'diagrams'] and not self._curr_amps and not self._fks_multi_proc):
+AttributeError: 'MasterCmd' object has no attribute '_fks_multi_proc'
+                          MadGraph5_aMC@NLO Options    
+                          ----------------    
+               stdout_level 	:	20 (user set)
+         group_subprocesses 	:	Auto
+  ignore_six_quark_processes 	:	False
+      loop_optimized_output 	:	True
+                      gauge 	:	unitary
+        complex_mass_scheme 	:	False
+
+                         MadEvent Options    
+                          ----------------    
+     automatic_html_opening 	:	False (user set)
+                    nb_core 	:	8 (user set)
+                   run_mode 	:	2
+
+                      Configuration Options    
+                      ---------------------    
+                text_editor 	:	None
+      cluster_status_update 	:	(600, 30)
+               pythia8_path 	:	None (user set)
+                  hwpp_path 	:	None (user set)
+            pythia-pgs_path 	:	./pythia-pgs
+                    td_path 	:	./td
+               delphes_path 	:	./Delphes
+                thepeg_path 	:	None (user set)
+               cluster_type 	:	condor
+           cluster_nb_retry 	:	1
+                        OLP 	:	MadLoop
+                 eps_viewer 	:	None
+                    fastjet 	:	/usr/local/Cellar/fastjet/3.0.6/bin/fastjet-config (user set)
+                web_browser 	:	None
+          cluster_temp_path 	:	None
+               syscalc_path 	:	./SysCalc
+              cluster_queue 	:	None
+           madanalysis_path 	:	./MadAnalysis
+                     lhapdf 	:	lhapdf-config
+                 hepmc_path 	:	None (user set)
+         cluster_retry_wait 	:	300
+        output_dependencies 	:	external
+           fortran_compiler 	:	None
+                auto_update 	:	7
+        exrootanalysis_path 	:	/Users/jackmedley/Build/MG5_aMC_v2_1_1/ExRootAnalysis (user set)
+                    timeout 	:	60
+               cpp_compiler 	:	None
