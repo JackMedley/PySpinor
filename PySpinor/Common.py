@@ -6,6 +6,7 @@
 
 import numpy as np
 import copy
+from copy import deepcopy
 from cmath import *
 from itertools import product
 
