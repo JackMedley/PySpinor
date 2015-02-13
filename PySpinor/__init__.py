@@ -2,7 +2,7 @@
 # Non PySpinor imports
 #
 
-print "\n*** Welcome to PySpinor, your one-stop-shop for all your field theory needs ***\n"
+print "\n*** Welcome to PySpinor, the one-stop-shop for all your field theory needs ***\n"
 
 import numpy as np
 from   Common import *
