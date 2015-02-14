@@ -3,7 +3,7 @@
 # Import spinor library
 import PySpinor as pys
 from   PySpinor import Common
-from   Common   import *
+from   PySpinor.Common   import *
 
 # Define momenta in the problem
 pa = pys.Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00, 7.500000e+02, label='a', incoming=True)  # Incoming gluon
@@ -45,4 +45,8 @@ print "Sum for these polarisations = ",  Sum(pols)
 # Test of the (non-automated) printing of latex
 printOut = pys.spinorString(u_1.bar(), 'mu', u_a, u_2.bar(), 'mu', u_b, prefactor='-\\frac{g_s^2}{s_{a1}}')
 
-print printOut.getString()
+printOut.addString()
+
+printOut.getLaTeX('Test')
+
+printOut.compileLaTeX()
