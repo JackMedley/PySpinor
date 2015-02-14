@@ -17,8 +17,6 @@ u_b = pys.Spinor(pb)
 u_1 = pys.Spinor(p1)
 u_2 = pys.Spinor(p2)
 
-print u_a.momentum.__dict__
-
 pols = ('+', '+', '+', '+')
 
 #

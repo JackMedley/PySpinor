@@ -110,18 +110,16 @@ class spinorString(object):
 		fileO = open(os.path.dirname(os.path.realpath(__file__)) + "/" + fileName + ".tex", "w")
 
 		fileO.write("""
-\documentclass{article}
-\usepackage{graphicx}
-\\begin{document}\n\n""" + self.output + """\n
-\end{document}""")
+		\documentclass{article}
+		\usepackage{graphicx}
+		\\begin{document}\n\n""" + self.output + """\n
+		\end{document}""")
 
 	def compileLaTeX(self):
 
-		subprocess.call(["pdflatex", os.path.dirname(os.path.realpath(__file__)) + "/" + self.fileName  + ".tex"])
+		subprocess.call(["pdflatex", os.path.dirname(os.path.realpath(__file__)) + "/" + self.fileName  + ".tex",  "> /dev/null"])
 
-		subprocess.call(["rm", os.path.dirname(os.path.realpath(__file__)) + "/" + self.fileName + ".aux " + \
+		subprocess.call(["rm", os.path.dirname(os.path.realpath(__file__)) + "/" + self.fileName + ".aux ",
 			               os.path.dirname(os.path.realpath(__file__)) + "/" + self.fileName + ".log"])
-
-
 
 

@@ -16,7 +16,6 @@ from   copy   import deepcopy
 # PySpinor imports
 #
 
-# Parent classes
 from LorentzVector import LorentzVector
 from polDictionary import polDictionary
 from spinorString  import spinorString
@@ -25,6 +24,7 @@ from Momenta       import Momenta
 from Current       import Current
 from Tensor        import Tensor
 from Gluon         import Gluon
+# from Colour        import Colour
 
 # Utility functions
 from Utility import *
