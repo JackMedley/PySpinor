@@ -1,19 +1,23 @@
 #!/bin/python
 
 # Import spinor library
-from PySpinor import *
+import PySpinor as pys
+from   PySpinor import Common
+from   Common   import *
 
 # Define momenta in the problem
-pa = Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00, 7.500000e+02, incoming=True)  # Incoming gluon
-pb = Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00,-7.500000e+02, incoming=True)  # Incoming gluon
-p1 = Momenta(7.500000e+02, 1.663864e+02, 6.672462e+02,-2.993294e+02)		     # Outgoing ux
-p2 = Momenta(7.500000e+02,-1.663864e+02,-6.672462e+02, 2.993294e+02)		     # Outgoing u
+pa = pys.Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00, 7.500000e+02, label='a', incoming=True)  # Incoming gluon
+pb = pys.Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00,-7.500000e+02, label='b', incoming=True)  # Incoming gluon
+p1 = pys.Momenta(7.500000e+02, 1.663864e+02, 6.672462e+02,-2.993294e+02, label='1')		    # Outgoing ux
+p2 = pys.Momenta(7.500000e+02,-1.663864e+02,-6.672462e+02, 2.993294e+02, label='2')		    # Outgoing u
 
 # Define physical spinors
-u_a = Spinor(pa)
-u_b = Spinor(pb)
-u_1 = Spinor(p1)
-u_2 = Spinor(p2)
+u_a = pys.Spinor(pa)
+u_b = pys.Spinor(pb)
+u_1 = pys.Spinor(p1)
+u_2 = pys.Spinor(p2)
+
+print u_a.momentum.__dict__
 
 pols = ('+', '+', '+', '+')
 
@@ -21,21 +25,24 @@ pols = ('+', '+', '+', '+')
 # t-channel
 #
 
-term_1 = Current(u_1.bar(), 'mu', u_a).dot(Current(u_2.bar(), 'mu', u_b))
+term_1 = pys.Current(u_1.bar(), 'mu', u_a).dot(pys.Current(u_2.bar(), 'mu', u_b))
 
-A_t = - g_s ** 2 * term_1 / s(pa, p1)
-print "A_t", A_t
+A_t = - g_s ** 2 * term_1 / pys.s(pa, p1)
 
 #
 # u-channel
 #
 
 # Sum over the unphysical spinor polarisations
-term_2 = Current(u_2.bar(), 'mu', u_a).dot(Current(u_1.bar(), 'mu', u_b))
+term_2 = pys.Current(u_2.bar(), 'mu', u_a).dot(pys.Current(u_1.bar(), 'mu', u_b))
 
-A_u = - g_s ** 2 * term_2 / s(pa, p2)
-print "A_u", A_u
+A_u = - g_s ** 2 * term_2 / pys.s(pa, p2)
 
-Sum = (A_t + A_u) * avgFactor() * 9.0
+Sum = (A_t + A_u) * pys.avgFactor() * 9.0
 
 print "Sum for these polarisations = ",  Sum(pols)
+
+# Test of the (non-automated) printing of latex
+printOut = pys.spinorString(u_1.bar(), 'mu', u_a, u_2.bar(), 'mu', u_b, prefactor='-\\frac{g_s^2}{s_{a1}}')
+
+print printOut.getString()

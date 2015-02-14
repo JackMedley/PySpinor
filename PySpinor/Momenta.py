@@ -10,13 +10,16 @@ class Momenta(LorentzVector):
 	iList = []
 	oList = []
 
-	def __init__ (self, E, pX, pY, pZ, incoming=False, upper=True, physical=True):
+	def __init__ (self, E, pX, pY, pZ, label='', incoming=False, upper=True, physical=True):
 
 		if self.pCount == None:
 			self.pCount = 0
 
 		# Save the incoming/outgoing state
 		self.incoming = incoming
+
+		# Save the label for printing purposes
+		self.label = label
 
 		if physical:
 			self.ID = self.pCount
