@@ -53,6 +53,19 @@ class Momenta(LorentzVector):
 		else:
 			return False
 
+	@classmethod
+	def byConservation(cls):
+
+		temp  = Momenta.iList[0]
+		temp += Momenta.iList[1]
+
+		for p in Momenta.oList:
+			temp -= p
+
+		Momenta.oList.append(temp)
+
+		return temp
+
 	def isIncoming(self):
 		if self.incoming:
 			return True
