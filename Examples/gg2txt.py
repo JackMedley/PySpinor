@@ -40,9 +40,9 @@ Gluon_a = Gluon(pa, ra, 'nu')['+']
 Gluon_b = Gluon(pb, rb, 'mu')['-']
 
 # Useful constants
-f1 = (u_3 // u_4) / p1.mass()
-f2 = (u_2 // u_1) / p1.mass()
 m  = p1.mass()
+f1 = (u_3 // u_4) / m
+f2 = (u_2 // u_1) / m
 
 #
 # s-channel
@@ -86,6 +86,26 @@ A_t = - i * (-term_1 + term_2 + term_3 + term_4 - term_5 - term_6 + term_7 - ter
 print "   -> A_t   = ", A_t[pol]
 
 #
+# Alternative t-channel
+#
+
+term_1  = f1 * Current(u_4.bar('-'), 'mu', u_2('-')).dot(Gluon_b) * Current(u_1.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+term_2  = f1 * Current(u_4.bar('-'), 'mu', u_1('-')).dot(Gluon_b) * Current(u_2.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+term_3  = f1 * Current(u_4.bar('-'), 'mu', u_a('-')).dot(Gluon_b) * Current(u_a.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+term_4  = f1 * Current(u_4.bar('-'), 'mu', u_1('-')).dot(Gluon_b) * Current(u_1.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+term_5  = f1 * Current(u_4.bar('-'), 'mu', u_2('-')).dot(Gluon_b) * Current(u_2.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+
+term_6  = f2 * Current(u_3.bar('+'), 'mu', u_a('+')).dot(Gluon_b) * Current(u_a.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+term_7  = f2 * Current(u_3.bar('+'), 'mu', u_1('+')).dot(Gluon_b) * Current(u_1.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+term_8  = f2 * Current(u_3.bar('+'), 'mu', u_2('+')).dot(Gluon_b) * Current(u_2.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+term_9  = f2 * Current(u_3.bar('+'), 'mu', u_1('+')).dot(Gluon_b) * Current(u_2.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+term_10 = f2 * Current(u_3.bar('+'), 'mu', u_2('+')).dot(Gluon_b) * Current(u_1.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+
+A_t = - i * () / s(pa, p1)
+
+print "   -> A_t   = ", A_t[pol]
+
+#
 # u-channel
 #
 
@@ -101,12 +121,33 @@ term_5 = f2 * Current(u_3.bar('-'), 'mu', u_3('-')).dot(Gluon_a) * \
               Current(u_2.bar('-'), 'mu', u_3('-')).dot(Gluon_b)
 term_6 = f2 * Current(u_4.bar('-'), 'mu', u_3('-')).dot(Gluon_a) * \
               Current(u_2.bar('-'), 'mu', u_4('-')).dot(Gluon_b)
+
 term_7 = m * f1 * f2 * Tensor(u_4.bar('-'), 'nu', 'mu', u_2('+')).contract(Gluon_b('mu'), Gluon_a('nu'))
 term_8 = m           * Tensor(u_3.bar('+'), 'nu', 'mu', u_1('-')).contract(Gluon_b('mu'), Gluon_a('nu'))
 
-A_u =  i * (-term_1 + term_2 + term_3 + term_4 - term_5 - term_6 + term_7 - term_8) / s(pa, p2)
+A_u = - i * () / s(pa, p2)
 
 print "   -> A_u   = ", A_u[pol]
+
+#
+# Alternative u-channel - calculate this
+#
+
+# term_1  = f1 * Current(u_4.bar('-'), 'mu', u_2('-')).dot(Gluon_b) * Current(u_1.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+# term_2  = f1 * Current(u_4.bar('-'), 'mu', u_1('-')).dot(Gluon_b) * Current(u_2.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+# term_3  = f1 * Current(u_4.bar('-'), 'mu', u_a('-')).dot(Gluon_b) * Current(u_a.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+# term_4  = f1 * Current(u_4.bar('-'), 'mu', u_1('-')).dot(Gluon_b) * Current(u_1.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+# term_5  = f1 * Current(u_4.bar('-'), 'mu', u_2('-')).dot(Gluon_b) * Current(u_2.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+
+# term_6  = f2 * Current(u_3.bar('+'), 'mu', u_a('+')).dot(Gluon_b) * Current(u_a.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+# term_7  = f2 * Current(u_3.bar('+'), 'mu', u_1('+')).dot(Gluon_b) * Current(u_1.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+# term_8  = f2 * Current(u_3.bar('+'), 'mu', u_2('+')).dot(Gluon_b) * Current(u_2.bar('+'), 'nu', u_2('+')).dot(Gluon_a)
+# term_9  = f2 * Current(u_3.bar('+'), 'mu', u_1('+')).dot(Gluon_b) * Current(u_2.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+# term_10 = f2 * Current(u_3.bar('+'), 'mu', u_2('+')).dot(Gluon_b) * Current(u_1.bar('-'), 'nu', u_1('-')).dot(Gluon_a)
+
+# A_u = - i * (term_1 + term_2 + term_3 + term_4 + term_5 + term_6 + term_7 + term_8) / s(pa, p1)
+
+# print "   -> A_u   = ", A_u[pol]
 
 #
 # Form colour flow amplitudes for each polarisation

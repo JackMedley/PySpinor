@@ -30,26 +30,6 @@ u_2 = Spinor(p2)
 v_1 = Spinor(p1, fermion=False)
 v_2 = Spinor(p2, fermion=False)
 
-# Dirac Equation Checks
-# print p1.slashed() * u_1('+')
-# print m * u_1('+'), "\n"
-# print p1.slashed() * v_1('+')
-# print m * v_1('+'), "\n"
-# print p2.slashed() * u_2('+')
-# print m * u_2('+'), "\n"
-# print p2.slashed() * v_2('+')
-# print m * v_2('+'), "\n"
-
-# Spinor completeness checks
-# print u_1('+') * u_1.bar('+') + u_1('-') * u_1.bar('-')
-# print "\n"
-# print p1.slashed() + m * I4
-# print "\n"
-# print v_1('+') * v_1.bar('+') + v_1('-') * v_1.bar('-')
-# print "\n"
-# print p1.slashed() - m * I4
-# print "\n"
-
 # Pick polarisations
 polarisations = [('+', '-', '+', '-')]
 pol = polarisations[0]
@@ -112,7 +92,7 @@ A_u = i * (term_1 - term_2) / s(pa, p2)
 
 print "   -> A_u = ", A_u[pol]
 
-# 
+#
 # Form colour flow amplitudes for each polarisation
 #
 

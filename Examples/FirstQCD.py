@@ -37,7 +37,7 @@ contraction = cur_1.dot(cur_2)
 
 # Combine prefactors and the sum of helicity combinations and then average over spins
 # Multiply by 3.0 for colour sum of final states
-Amplitude = prefactor * cur_1.dot(cur_2)(pol) * avgFactor() * 3.0
+Amplitude = prefactor * cur_1.dot(cur_2).sum(pol) * avgFactor() * 3.0
 
 # Return the result
 print Amplitude, 'GeV'

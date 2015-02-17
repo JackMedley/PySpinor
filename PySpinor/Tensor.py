@@ -1,5 +1,7 @@
 from Common import *
 from polDictionary import polDictionary
+from LorentzVector import LorentzVector
+from Spinor import Spinor
 
 class Tensor(polDictionary):
 

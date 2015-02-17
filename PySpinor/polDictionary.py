@@ -154,6 +154,31 @@ class polDictionary(object):
 
 		return Pass
 
+	def sum(self, pols=None):
+
+		if pols == None:
+
+			temp = 0.0
+
+			for key in self.polarisations:
+
+				temp += self.polarisations[key]
+
+			return temp
+
+		if isinstance(pols, tuple): return self.polarisations[pols]
+
+		if isinstance(pols, list):
+
+			temp = 0.0
+
+			for key in pols:
+
+				temp += self.polarisations[pols]
+
+			return temp
+
+
 	def __add__(self, other):
 
 		temp = {}

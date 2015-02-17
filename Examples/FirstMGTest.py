@@ -35,39 +35,13 @@ q = p1 + p2
 prefactor = e ** 4 / q.dot(q) ** 2
 
 # Calculate all combinations of polarisations
-cur1 = Current(u_4.bar("+"), "mu", v_3("+"))
-cur2 = Current(u_4.bar("+"), "mu", v_3("-"))
-cur3 = Current(u_4.bar("-"), "mu", v_3("+"))
-cur4 = Current(u_4.bar("-"), "mu", v_3("-"))
-
-cur5 = Current(v_1.bar("+"), "mu", u_2("+"))
-cur6 = Current(v_1.bar("+"), "mu", u_2("-"))
-cur7 = Current(v_1.bar("-"), "mu", u_2("+"))
-cur8 = Current(v_1.bar("-"), "mu", u_2("-"))
+cur1 = Current(u_4.bar(), "mu", v_3).dot(Current(v_1.bar(), "mu", u_2))
 
 # Perform all of the contractions
-Sum  = abs2(cur1.dot(cur5))
-Sum += abs2(cur1.dot(cur6))
-Sum += abs2(cur1.dot(cur7))
-Sum += abs2(cur1.dot(cur8))
-
-Sum += abs2(cur2.dot(cur5))
-Sum += abs2(cur2.dot(cur6))
-Sum += abs2(cur2.dot(cur7))
-Sum += abs2(cur2.dot(cur8))
-
-Sum += abs2(cur3.dot(cur5))
-Sum += abs2(cur3.dot(cur6))
-Sum += abs2(cur3.dot(cur7))
-Sum += abs2(cur3.dot(cur8))
-
-Sum += abs2(cur4.dot(cur5))
-Sum += abs2(cur4.dot(cur6))
-Sum += abs2(cur4.dot(cur7))
-Sum += abs2(cur4.dot(cur8))
+contraction  = abs2(cur1)
 
 # Combine prefactors and the sum of helicity combinations and then average over spins
-Amplitude = (prefactor * Sum) / 4.0
+Amplitude = (prefactor * contraction.sum()) / 4.0
 
 # Return the result
 print Amplitude, "GeV"
