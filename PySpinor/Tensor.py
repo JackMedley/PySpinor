@@ -32,6 +32,12 @@ class Tensor(object):
 
 	# Overloading
 
+	## Allows tensor to be called with specific indices given by list
+	def __call__(self, indList):
+		assert len(indList) == self.rank, "Error: incorrect length of index list in call!"
+		self.SetIndices(indList)
+		return self
+
 	## At present, printing a tensor prints only its element array
 	def __str__(self):
 		return self.tensorElements.__str__()
