@@ -1,0 +1,195 @@
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor}{}\section{Py\+Spinor.\+Spinor.\+Spinor Class Reference}
+\label{class_py_spinor_1_1_spinor_1_1_spinor}\index{Py\+Spinor.\+Spinor.\+Spinor@{Py\+Spinor.\+Spinor.\+Spinor}}
+
+
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor}{Spinor} class Woo! Py\+Spinor! Spinors are defined using contravariant momenta.  
+
+
+Inheritance diagram for Py\+Spinor.\+Spinor.\+Spinor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_py_spinor_1_1_spinor_1_1_spinor}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_1_1spinor}{spinor}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a9b056b1d6a909bc378dfed5375eeb961}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a3bd7138871861b01b8206982230c63ed}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, polarisation)
+\begin{DoxyCompactList}\small\item\em Make the object a functor. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_ad5401a5668ab41cff0f76cc270ed96d1}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_ad48c01a28f221b81c913bf2fbf2cea6d}{\+\_\+\+\_\+ne\+\_\+\+\_\+} (self, other)
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_ab3bdf966caa2b922ba9ac76952701ee9}{\+\_\+\+\_\+floordiv\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Overload the floor division operator to calculate spinor brackets like \mbox{[}21\mbox{]}. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a26eed6b4fd1bfeee0974afbaefd02e40}{\+\_\+\+\_\+pow\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Overload the power operator to calculate spinor brackets like $<$21$>$ \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_ab4a660f4882baa072d3c06845fae9fa7}{get\+Momentum} (self)
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a429c47acf609aee5dd41aa580e688de4}{is\+Barred} (self)
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_abea59fee1e79b530008e25f7e43e737b}{is\+Massless} (self)
+\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_ad1202b23d67450b5d097fa5984f4972e}{bar}
+\begin{DoxyCompactList}\small\item\em Clever barred calculation which makes the barred spinors look like functors too...but they arent really. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a561a2bbb23e5f44bd04a68065da6cced}{dirac\+Eqn} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a3a07111900e024ddfacd6b0562d36f11}{I\+D}
+\item 
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a0e1deed1ae598a4bda4a648422975cee}{momentum}
+\item 
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a40fd29a13815d67b8ee09391440d8781}{barred}
+\item 
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a5dbc10a0e243e6b0e5039583fe4dd63f}{fermion}
+\item 
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_a519f8be747d03caa97141c1d0146cd1c}{mass}
+\item 
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor_ade40e15caea3f801f46629f948e33137}{pols}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_py_spinor_1_1_spinor_1_1_spinor}{Spinor} class Woo! Py\+Spinor! Spinors are defined using contravariant momenta. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a9b056b1d6a909bc378dfed5375eeb961}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{\+\_\+\+\_\+init\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{momentum, }
+\item[{}]{barred = {\ttfamily False}, }
+\item[{}]{fermion = {\ttfamily True}, }
+\item[{}]{I\+D = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_a9b056b1d6a909bc378dfed5375eeb961}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a3bd7138871861b01b8206982230c63ed}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{\+\_\+\+\_\+call\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+\_\+\+\_\+call\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{polarisation}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_a3bd7138871861b01b8206982230c63ed}
+
+
+Make the object a functor. 
+
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_ab3bdf966caa2b922ba9ac76952701ee9}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!\+\_\+\+\_\+floordiv\+\_\+\+\_\+@{\+\_\+\+\_\+floordiv\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+floordiv\+\_\+\+\_\+@{\+\_\+\+\_\+floordiv\+\_\+\+\_\+}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{\+\_\+\+\_\+floordiv\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+\_\+\+\_\+floordiv\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_ab3bdf966caa2b922ba9ac76952701ee9}
+
+
+Overload the floor division operator to calculate spinor brackets like \mbox{[}21\mbox{]}. 
+
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_ad48c01a28f221b81c913bf2fbf2cea6d}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+ne\+\_\+\+\_\+@{\+\_\+\+\_\+ne\+\_\+\+\_\+}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{\+\_\+\+\_\+ne\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+\_\+\+\_\+ne\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_ad48c01a28f221b81c913bf2fbf2cea6d}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a26eed6b4fd1bfeee0974afbaefd02e40}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!\+\_\+\+\_\+pow\+\_\+\+\_\+@{\+\_\+\+\_\+pow\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pow\+\_\+\+\_\+@{\+\_\+\+\_\+pow\+\_\+\+\_\+}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{\+\_\+\+\_\+pow\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+\_\+\+\_\+pow\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_a26eed6b4fd1bfeee0974afbaefd02e40}
+
+
+Overload the power operator to calculate spinor brackets like $<$21$>$ 
+
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_ad5401a5668ab41cff0f76cc270ed96d1}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_ad5401a5668ab41cff0f76cc270ed96d1}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_ad1202b23d67450b5d097fa5984f4972e}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!bar@{bar}}
+\index{bar@{bar}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{bar}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+bar (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{pol = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_ad1202b23d67450b5d097fa5984f4972e}
+
+
+Clever barred calculation which makes the barred spinors look like functors too...but they arent really. 
+
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a561a2bbb23e5f44bd04a68065da6cced}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!dirac\+Eqn@{dirac\+Eqn}}
+\index{dirac\+Eqn@{dirac\+Eqn}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{dirac\+Eqn}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+dirac\+Eqn (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_a561a2bbb23e5f44bd04a68065da6cced}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_ab4a660f4882baa072d3c06845fae9fa7}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!get\+Momentum@{get\+Momentum}}
+\index{get\+Momentum@{get\+Momentum}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{get\+Momentum}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+get\+Momentum (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_ab4a660f4882baa072d3c06845fae9fa7}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a429c47acf609aee5dd41aa580e688de4}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!is\+Barred@{is\+Barred}}
+\index{is\+Barred@{is\+Barred}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{is\+Barred}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+is\+Barred (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_a429c47acf609aee5dd41aa580e688de4}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_abea59fee1e79b530008e25f7e43e737b}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!is\+Massless@{is\+Massless}}
+\index{is\+Massless@{is\+Massless}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{is\+Massless}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Spinor.\+Spinor.\+is\+Massless (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_spinor_1_1_spinor_abea59fee1e79b530008e25f7e43e737b}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a40fd29a13815d67b8ee09391440d8781}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!barred@{barred}}
+\index{barred@{barred}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{barred}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Spinor.\+Spinor.\+barred}\label{class_py_spinor_1_1_spinor_1_1_spinor_a40fd29a13815d67b8ee09391440d8781}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a5dbc10a0e243e6b0e5039583fe4dd63f}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!fermion@{fermion}}
+\index{fermion@{fermion}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{fermion}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Spinor.\+Spinor.\+fermion}\label{class_py_spinor_1_1_spinor_1_1_spinor_a5dbc10a0e243e6b0e5039583fe4dd63f}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a3a07111900e024ddfacd6b0562d36f11}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!I\+D@{I\+D}}
+\index{I\+D@{I\+D}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{I\+D}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Spinor.\+Spinor.\+I\+D}\label{class_py_spinor_1_1_spinor_1_1_spinor_a3a07111900e024ddfacd6b0562d36f11}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a519f8be747d03caa97141c1d0146cd1c}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!mass@{mass}}
+\index{mass@{mass}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{mass}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Spinor.\+Spinor.\+mass}\label{class_py_spinor_1_1_spinor_1_1_spinor_a519f8be747d03caa97141c1d0146cd1c}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_a0e1deed1ae598a4bda4a648422975cee}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!momentum@{momentum}}
+\index{momentum@{momentum}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{momentum}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Spinor.\+Spinor.\+momentum}\label{class_py_spinor_1_1_spinor_1_1_spinor_a0e1deed1ae598a4bda4a648422975cee}
+\hypertarget{class_py_spinor_1_1_spinor_1_1_spinor_ade40e15caea3f801f46629f948e33137}{}\index{Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}!pols@{pols}}
+\index{pols@{pols}!Py\+Spinor\+::\+Spinor\+::\+Spinor@{Py\+Spinor\+::\+Spinor\+::\+Spinor}}
+\subsubsection[{pols}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Spinor.\+Spinor.\+pols}\label{class_py_spinor_1_1_spinor_1_1_spinor_ade40e15caea3f801f46629f948e33137}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Py\+Spinor/\hyperlink{_spinor_8py}{Spinor.\+py}\end{DoxyCompactItemize}

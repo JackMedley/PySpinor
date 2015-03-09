@@ -2,6 +2,8 @@ from Common import *
 from polDictionary import polDictionary
 from LorentzVector import LorentzVector
 
+
+## Class storing spinor current information
 class Current(polDictionary):
 
 	@classmethod
@@ -11,6 +13,7 @@ class Current(polDictionary):
 		temp.polarisations = Dict
 		return temp
 
+	## Current constructor
 	def __init__(self, spin1, index, spin2, upper=True, Dict=None):
 		from Spinor import Spinor
 
@@ -119,6 +122,7 @@ class Current(polDictionary):
 
 		return Current(self.spin1, self.index, self.spin2, upper=self.upper, Dict=temp)
 
+	## Lorentz vector currents
 	class current(LorentzVector):
 
 		# Keep track of all the indices in the calculatation

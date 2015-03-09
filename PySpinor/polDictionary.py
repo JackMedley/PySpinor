@@ -2,7 +2,7 @@ from Common import *
 from Momenta import Momenta
 from LorentzVector import LorentzVector
 
-# A functor class whick holds an item (a current or a LorentzVector, ...) for each polarisation in the problem
+## A functor class whick holds an item (a current or a LorentzVector, ...) for each polarisation in the problem
 class polDictionary(object):
 
 	# Flag to avoid multiple calls to 'getPolarisations'
@@ -37,7 +37,7 @@ class polDictionary(object):
 
 		return copy
 
-	# Zero(ish) checker to fix screwed up numerics where things are basically zero but not quite
+	## Zero(ish) checker to fix screwed up numerics where things are basically zero but not quite
 	def zeroChecker(self):
 
 		if isinstance(self.polarisations.itervalues().next(), float) or \
@@ -72,7 +72,7 @@ class polDictionary(object):
 
 					self.polarisations[key].Z(zero)
 
-	# Define functor behaviour
+	## Define functor behaviour
 	def __call__(self, index):
 
 		copy = deepcopy(self)

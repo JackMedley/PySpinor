@@ -1,5 +1,8 @@
 from Common import *
 
+## Spinor class
+#  Woo! PySpinor!
+#  Spinors are defined using contravariant momenta
 class Spinor(object):
 
 	def __init__ (self, momentum, barred=False, fermion=True, ID=None):
@@ -68,7 +71,7 @@ class Spinor(object):
 				self.pols["+"] = self.spinor(momentum, "+", barred=barred, vector=temp1, ID=self.ID)
 				self.pols["-"] = self.spinor(momentum, "-", barred=barred, vector=temp2, ID=self.ID)
 
-	# Make the object a functor
+	## Make the object a functor
 	def __call__(self, polarisation):
 
 		if polarisation == "+":
@@ -89,7 +92,7 @@ class Spinor(object):
 		else:
 			return False
 
-	# Overload the floor division operator to calculate spinor brackets like [21]
+	## Overload the floor division operator to calculate spinor brackets like [21]
 	def __floordiv__(self, other):
 
 		assert isinstance(other, Spinor) is True, "ERROR!  Computing spinor bracket [i j] with non-Spinor type."
@@ -106,7 +109,7 @@ class Spinor(object):
 			else:
 				return (self.bar('-') * other("+")).item(0)
 
-	# Overload the power operator to calculate spinor brackets like <21>
+	## Overload the power operator to calculate spinor brackets like <21>
 	def __pow__(self, other):
 
 		assert isinstance(other, Spinor) is True, "ERROR!  Computing spinor bracket <i j> with non-Spinor type."
@@ -139,7 +142,7 @@ class Spinor(object):
 		else:
 			return False
 
-	# Clever barred calculation which makes the barred spinors look like functors too...but they arent really
+	## Clever barred calculation which makes the barred spinors look like functors too...but they arent really
 	def bar(self, pol=None):
 
 		temp = Spinor(self.momentum, barred = not self.barred, fermion=self.fermion, ID=self.ID)
@@ -267,7 +270,7 @@ class Spinor(object):
 
 			return True
 
-		# Addition
+		## Addition
 		def __add__(self, other):
 
 			if isinstance(other, Spinor.spinor):
@@ -279,7 +282,7 @@ class Spinor(object):
 			else:
 				print "ERROR!  No addition rule for type", type(other)
 
-		# Subtraction
+		## Subtraction
 		def __sub__(self, other):
 
 			if isinstance(other, Spinor.spinor):
@@ -291,7 +294,7 @@ class Spinor(object):
 			else:
 				print "ERROR!  No addition rule for type", type(other)
 
-		# Right Addition - set array priority to high to get correct behaviour
+		## Right Addition - set array priority to high to get correct behaviour
 		__array_priority__ = 100
 		def __radd__(self, other):
 

@@ -3,6 +3,7 @@ from Momenta import Momenta
 from Spinor  import Spinor
 from Current import Current
 
+## Gluon class
 class Gluon(object):
 
 	def __init__(self, p, r, index, upper=True):

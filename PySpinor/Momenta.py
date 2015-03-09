@@ -1,7 +1,7 @@
 from Common import *
 from LorentzVector import LorentzVector
 
-# Derived class for particle momenta
+## Derived class for particle momenta
 class Momenta(LorentzVector):
 
 	pCount = 0
@@ -53,12 +53,14 @@ class Momenta(LorentzVector):
 		else:
 			return False
 
+	## Bool: Is the momentum incoming?
 	def isIncoming(self):
 		if self.incoming:
 			return True
 		else:
 			return False
 
+	## Determine mass from vector squared
 	def mass(self):
 
 		self.m = sqrt(self.dot(self))
@@ -73,6 +75,8 @@ class Momenta(LorentzVector):
 		else:
 			return self.m.real
 
+	## Determing mass squared
+	#  Why do this though the sqrt of the inner prod?
 	def mass2(self):
 
 		self.m = sqrt(self.dot(self))
@@ -85,6 +89,7 @@ class Momenta(LorentzVector):
 		else:
 			return self.m.real ** 2
 
+	## Bool: Is the momentum null?
 	def isMassless(self):
 
 		if self.mass() == 0.0:
@@ -92,15 +97,19 @@ class Momenta(LorentzVector):
 		else:
 			return False
 
+	## Lightcone coord plus component
 	def plus(self):
 		return self.T() + self.Z()
 
+	## Lightcone coord minus component
 	def minus(self):
 		return self.T() - self.Z()
 
+	## Lightcone coord perpendicular components
 	def perp(self):
 		return self.X() + i * self.Y()
 
+	## Lorentz boost momentum
 	def boost(vector, bX, bY, bZ):
 
 		b2 = bX ** 2 + bY ** 2 + bZ ** 2
@@ -118,6 +127,7 @@ class Momenta(LorentzVector):
 		# Return the new LorentzVector
 		return Momenta(temp.T(), temp.X(), temp.Y(), temp.Z(), vector.upper, physical=False)
 
+	## Decompost onto special basis
 	def decompose(self):
 
 		mass = self.mass()

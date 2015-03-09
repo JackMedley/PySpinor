@@ -1,0 +1,399 @@
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}{}\section{Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector Class Reference}
+\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}\index{Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector@{Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector}}
+
+
+Parent class for anything with a Lorentz index Will require full rewrite inheriting from new \hyperlink{namespace_py_spinor_1_1_tensor}{Tensor} class and likely with Lorentz\+Index class to be written.  
+
+
+Inheritance diagram for Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aae8d47664e6e334ffc3765e081f77c4f}{\+\_\+\+\_\+init\+\_\+\+\_\+}
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8adef627e38fbef234c90de0378bdf40}{T}
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_abb4ed2b7f72ceea64756d9e27ef59e3a}{X}
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ac2449f2d40ae954dc7be2e3ab335ad18}{Y}
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad05ad87908b5c645af2ae67cbf5ea269}{Z}
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a89043007a937453bbc9adc76fa4d3276}{conjugate} (self)
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a83544cd8c242999f7be5cfc29e61e31c}{\+\_\+\+\_\+call\+\_\+\+\_\+} (self, \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a11da34cf107e38100b3bfb509eac2d1f}{index})
+\begin{DoxyCompactList}\small\item\em Allows vector to be called with specific index name given by string argument. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7e9f0d16494f38a0c8aab1290e73b51}{\+\_\+\+\_\+str\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab127e64670ad904cd9fc85afdf78cd79}{\+\_\+\+\_\+sub\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Subtraction for co-\/ and contra-\/variant vectors (resp) \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aa0925be56ef69c512eb861129b37fcb0}{\+\_\+\+\_\+add\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Addition for co-\/ and contra-\/variant vectors (resp) \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7178d2be820ce5c50e01c8c03fb3cef}{\+\_\+\+\_\+neg\+\_\+\+\_\+} (self)
+\begin{DoxyCompactList}\small\item\em Negation of vector elements. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a4b6ca093f716869de228bd9611e8cd40}{\+\_\+\+\_\+mul\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Defines vector-\/scalar and vector-\/matrix multiplication (numpy matrix input required for latter) \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a9c2aeb0c1d496ffd0d6fe4e3d551f451}{\+\_\+\+\_\+pow\+\_\+\+\_\+} (self, exponent)
+\begin{DoxyCompactList}\small\item\em Allows for powers of vectors through the vector self inner product. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a1affc9d1cf09f3f7dbe85742c7ce7a6c}{\+\_\+\+\_\+getitem\+\_\+\+\_\+} (self, \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a11da34cf107e38100b3bfb509eac2d1f}{index})
+\begin{DoxyCompactList}\small\item\em Returns particular element of vector specified by numerical index. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8c669764e80ef2c4100a898e9b1ab7d6}{\+\_\+\+\_\+rmul\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Scalar-\/vector and matrix-\/vector multiplication. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8fbfe5ece750a1a53a99f609972ad616}{\+\_\+\+\_\+eq\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Comparison of float elements of a vector up to some degree of tolerance T\+O\+L\+E\+R\+A\+N\+C\+E defined in \hyperlink{_common_8py}{Common.\+py}. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad011c74a579e139893eb6705b9b70af1}{dot} (self, other)
+\begin{DoxyCompactList}\small\item\em Dot product for two four vectors. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a9ce48fd10a5b006f9a42423d689c7e38}{slashed} (self)
+\begin{DoxyCompactList}\small\item\em Feynman slash notation. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7c7e87a6ca9cd879f5f17edd1e474af}{\+\_\+\+\_\+div\+\_\+\+\_\+} (self, other)
+\begin{DoxyCompactList}\small\item\em Division by scalar. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a1a40b84d71110ea6280f0d53a371e8ff}{Lower} (self)
+\begin{DoxyCompactList}\small\item\em Lower index. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a2de4017ffc816aeed0ebf7e8dd189464}{Raise} (self)
+\begin{DoxyCompactList}\small\item\em Raise index. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab8854208c107ed5ef4fec5d3036e0220}{co} (self)
+\begin{DoxyCompactList}\small\item\em Bool\+: Is the \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}{Lorentz\+Vector} covariant? \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab2fcc827cfd71331e8f62e9c6bf95197}{contra} (self)
+\begin{DoxyCompactList}\small\item\em Bool\+: Is the \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}{Lorentz\+Vector} contravariant? \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_acf1bb09347d6e573c95e8e4c1c9d99c6}{set\+Vector} (self, \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a094448bd25db3631dfda6402c7c258e1}{vector})
+\begin{DoxyCompactList}\small\item\em Sets elements given 1-\/d numpy array. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aa37cd941a7f2cbd8369f0a5e28925576}{print\+Index} (self)
+\begin{DoxyCompactList}\small\item\em Print the index for this current. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ae739123740bfd3809dd9b885afad90eb}{set\+Index} (self, \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a11da34cf107e38100b3bfb509eac2d1f}{index})
+\begin{DoxyCompactList}\small\item\em Change the index for an instance. \end{DoxyCompactList}\item 
+def \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a5a7c97faead7b3e7f08885b4ebb1f24d}{boost} (\hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a094448bd25db3631dfda6402c7c258e1}{vector}, b\+X, b\+Y, b\+Z)
+\begin{DoxyCompactList}\small\item\em Perform a Lorentz boost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad789506f2bd56ab54bb743d84092aa77}{upper}
+\item 
+\hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a11da34cf107e38100b3bfb509eac2d1f}{index}
+\item 
+\hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a094448bd25db3631dfda6402c7c258e1}{vector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parent class for anything with a Lorentz index Will require full rewrite inheriting from new \hyperlink{namespace_py_spinor_1_1_tensor}{Tensor} class and likely with Lorentz\+Index class to be written. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aae8d47664e6e334ffc3765e081f77c4f}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+init\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{E, }
+\item[{}]{X, }
+\item[{}]{Y, }
+\item[{}]{Z, }
+\item[{}]{upper, }
+\item[{}]{index = {\ttfamily \textquotesingle{}mu\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aae8d47664e6e334ffc3765e081f77c4f}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aa0925be56ef69c512eb861129b37fcb0}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+add\+\_\+\+\_\+@{\+\_\+\+\_\+add\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+add\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+add\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aa0925be56ef69c512eb861129b37fcb0}
+
+
+Addition for co-\/ and contra-\/variant vectors (resp) 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a83544cd8c242999f7be5cfc29e61e31c}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+call\+\_\+\+\_\+@{\+\_\+\+\_\+call\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+call\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+call\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a83544cd8c242999f7be5cfc29e61e31c}
+
+
+Allows vector to be called with specific index name given by string argument. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7c7e87a6ca9cd879f5f17edd1e474af}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+div\+\_\+\+\_\+@{\+\_\+\+\_\+div\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+div\+\_\+\+\_\+@{\+\_\+\+\_\+div\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+div\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+div\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7c7e87a6ca9cd879f5f17edd1e474af}
+
+
+Division by scalar. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8fbfe5ece750a1a53a99f609972ad616}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+eq\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+eq\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8fbfe5ece750a1a53a99f609972ad616}
+
+
+Comparison of float elements of a vector up to some degree of tolerance T\+O\+L\+E\+R\+A\+N\+C\+E defined in \hyperlink{_common_8py}{Common.\+py}. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a1affc9d1cf09f3f7dbe85742c7ce7a6c}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+getitem\+\_\+\+\_\+@{\+\_\+\+\_\+getitem\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+getitem\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+getitem\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a1affc9d1cf09f3f7dbe85742c7ce7a6c}
+
+
+Returns particular element of vector specified by numerical index. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a4b6ca093f716869de228bd9611e8cd40}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+mul\+\_\+\+\_\+@{\+\_\+\+\_\+mul\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+mul\+\_\+\+\_\+@{\+\_\+\+\_\+mul\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+mul\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+mul\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a4b6ca093f716869de228bd9611e8cd40}
+
+
+Defines vector-\/scalar and vector-\/matrix multiplication (numpy matrix input required for latter) 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7178d2be820ce5c50e01c8c03fb3cef}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+neg\+\_\+\+\_\+@{\+\_\+\+\_\+neg\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+neg\+\_\+\+\_\+@{\+\_\+\+\_\+neg\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+neg\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+neg\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7178d2be820ce5c50e01c8c03fb3cef}
+
+
+Negation of vector elements. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a9c2aeb0c1d496ffd0d6fe4e3d551f451}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+pow\+\_\+\+\_\+@{\+\_\+\+\_\+pow\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+pow\+\_\+\+\_\+@{\+\_\+\+\_\+pow\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+pow\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+pow\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{exponent}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a9c2aeb0c1d496ffd0d6fe4e3d551f451}
+
+
+Allows for powers of vectors through the vector self inner product. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8c669764e80ef2c4100a898e9b1ab7d6}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+rmul\+\_\+\+\_\+@{\+\_\+\+\_\+rmul\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+rmul\+\_\+\+\_\+@{\+\_\+\+\_\+rmul\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+rmul\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+rmul\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8c669764e80ef2c4100a898e9b1ab7d6}
+
+
+Scalar-\/vector and matrix-\/vector multiplication. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7e9f0d16494f38a0c8aab1290e73b51}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+str\+\_\+\+\_\+@{\+\_\+\+\_\+str\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+str\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+str\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_af7e9f0d16494f38a0c8aab1290e73b51}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab127e64670ad904cd9fc85afdf78cd79}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!\+\_\+\+\_\+sub\+\_\+\+\_\+@{\+\_\+\+\_\+sub\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+sub\+\_\+\+\_\+@{\+\_\+\+\_\+sub\+\_\+\+\_\+}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{\+\_\+\+\_\+sub\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+\_\+\+\_\+sub\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab127e64670ad904cd9fc85afdf78cd79}
+
+
+Subtraction for co-\/ and contra-\/variant vectors (resp) 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a5a7c97faead7b3e7f08885b4ebb1f24d}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!boost@{boost}}
+\index{boost@{boost}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{boost}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+boost (
+\begin{DoxyParamCaption}
+\item[{}]{vector, }
+\item[{}]{b\+X, }
+\item[{}]{b\+Y, }
+\item[{}]{b\+Z}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a5a7c97faead7b3e7f08885b4ebb1f24d}
+
+
+Perform a Lorentz boost. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab8854208c107ed5ef4fec5d3036e0220}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!co@{co}}
+\index{co@{co}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{co}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+co (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab8854208c107ed5ef4fec5d3036e0220}
+
+
+Bool\+: Is the \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}{Lorentz\+Vector} covariant? 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a89043007a937453bbc9adc76fa4d3276}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{conjugate}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+conjugate (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a89043007a937453bbc9adc76fa4d3276}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab2fcc827cfd71331e8f62e9c6bf95197}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!contra@{contra}}
+\index{contra@{contra}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{contra}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+contra (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ab2fcc827cfd71331e8f62e9c6bf95197}
+
+
+Bool\+: Is the \hyperlink{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector}{Lorentz\+Vector} contravariant? 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad011c74a579e139893eb6705b9b70af1}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!dot@{dot}}
+\index{dot@{dot}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+dot (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad011c74a579e139893eb6705b9b70af1}
+
+
+Dot product for two four vectors. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a1a40b84d71110ea6280f0d53a371e8ff}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!Lower@{Lower}}
+\index{Lower@{Lower}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{Lower}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+Lower (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a1a40b84d71110ea6280f0d53a371e8ff}
+
+
+Lower index. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aa37cd941a7f2cbd8369f0a5e28925576}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!print\+Index@{print\+Index}}
+\index{print\+Index@{print\+Index}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{print\+Index}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+print\+Index (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_aa37cd941a7f2cbd8369f0a5e28925576}
+
+
+Print the index for this current. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a2de4017ffc816aeed0ebf7e8dd189464}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!Raise@{Raise}}
+\index{Raise@{Raise}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{Raise}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+Raise (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a2de4017ffc816aeed0ebf7e8dd189464}
+
+
+Raise index. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ae739123740bfd3809dd9b885afad90eb}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!set\+Index@{set\+Index}}
+\index{set\+Index@{set\+Index}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{set\+Index}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+set\+Index (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{index}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ae739123740bfd3809dd9b885afad90eb}
+
+
+Change the index for an instance. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_acf1bb09347d6e573c95e8e4c1c9d99c6}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!set\+Vector@{set\+Vector}}
+\index{set\+Vector@{set\+Vector}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{set\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+set\+Vector (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{vector}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_acf1bb09347d6e573c95e8e4c1c9d99c6}
+
+
+Sets elements given 1-\/d numpy array. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a9ce48fd10a5b006f9a42423d689c7e38}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!slashed@{slashed}}
+\index{slashed@{slashed}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{slashed}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+slashed (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a9ce48fd10a5b006f9a42423d689c7e38}
+
+
+Feynman slash notation. 
+
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8adef627e38fbef234c90de0378bdf40}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!T@{T}}
+\index{T@{T}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{T}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+T (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{value = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a8adef627e38fbef234c90de0378bdf40}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_abb4ed2b7f72ceea64756d9e27ef59e3a}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!X@{X}}
+\index{X@{X}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+X (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{value = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_abb4ed2b7f72ceea64756d9e27ef59e3a}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ac2449f2d40ae954dc7be2e3ab335ad18}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!Y@{Y}}
+\index{Y@{Y}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{Y}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+Y (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{value = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ac2449f2d40ae954dc7be2e3ab335ad18}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad05ad87908b5c645af2ae67cbf5ea269}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!Z@{Z}}
+\index{Z@{Z}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{Z}]{\setlength{\rightskip}{0pt plus 5cm}def Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+Z (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{value = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad05ad87908b5c645af2ae67cbf5ea269}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a11da34cf107e38100b3bfb509eac2d1f}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!index@{index}}
+\index{index@{index}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+index}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a11da34cf107e38100b3bfb509eac2d1f}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad789506f2bd56ab54bb743d84092aa77}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!upper@{upper}}
+\index{upper@{upper}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{upper}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+upper}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_ad789506f2bd56ab54bb743d84092aa77}
+\hypertarget{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a094448bd25db3631dfda6402c7c258e1}{}\index{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}!vector@{vector}}
+\index{vector@{vector}!Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector@{Py\+Spinor\+::\+Lorentz\+Vector\+::\+Lorentz\+Vector}}
+\subsubsection[{vector}]{\setlength{\rightskip}{0pt plus 5cm}Py\+Spinor.\+Lorentz\+Vector.\+Lorentz\+Vector.\+vector}\label{class_py_spinor_1_1_lorentz_vector_1_1_lorentz_vector_a094448bd25db3631dfda6402c7c258e1}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Py\+Spinor/\hyperlink{_lorentz_vector_8py}{Lorentz\+Vector.\+py}\end{DoxyCompactItemize}

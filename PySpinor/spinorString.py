@@ -3,6 +3,8 @@ from Spinor import Spinor
 import os.path
 import subprocess
 
+## Spinor string class
+#  Depricated?
 class spinorString(object):
 
 	# Pass with dictionary of terms *in order* and a numerical prefactor

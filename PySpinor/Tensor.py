@@ -1,242 +1,253 @@
+import numpy as np
 from Common import *
-from polDictionary import polDictionary
 
-class Tensor(polDictionary):
+## General tensor class
+#
+# General tensor containing an n-dim numpy array
+# for an n-rank tensor with a n-length list of indices
+# which can be "upper" or "lower" (contra- or covariant, resp.)
+class Tensor(object):
 
-	def __init__(self, spin1, index1, index2, spin2, upper1=True, upper2=True):
+	## Tensor contructor
+	def __init__(self, mat, iList, ulList):
+		# super(Tensor, self).__init__()
 
-		assert isinstance(spin1, Spinor)        is True or  \
-		       isinstance(spin1, Spinor.spinor) is True and \
-		       isinstance(spin2, Spinor)        is True or  \
-		       isinstance(spin2, Spinor.spinor) is True, "ERROR! Wrong argument for Current..."
+		# Assert that matrix imput is numpy array type
+		assert isinstance(mat, np.ndarray), "Error: array of elements must be numpy array type!"
 
-		self.spin1  = spin1
-		self.spin2  = spin2
-		self.index1 = index1
-		self.index2 = index2
-		self.upper1 = upper1
-		self.upper2 = upper2
+		# Assert rank of tensor matches size of array
+		assert 4**len(iList) == mat.size, "Error: rank of tensor does not match size of array!"
 
-		# Generate a clean dictionary of all possible polarisation combinations
-		self.polarisations = polDictionary.getPolarisations()
+		# Assert that upper/lower list is same length as list of indices
+		assert len(ulList) == len(iList), "Error: upper/lower list needs to be same length as index list!"
 
-		# Fill in all the possible polarisations depending on the arguments
-		if isinstance(spin1, Spinor) and isinstance(spin2, Spinor):
+		self.tensorElements = mat
+		self.indexList      = iList
+		self.upperlowerList = ulList
+		self.rank           = len(iList)
 
-			for key in self.polarisations:
+		# Generates a dictionary to return wether a given index is upper or lower
+		self.upperlowerDict = {self.indexList[i] : self.upperlowerList[i] for i in range(0, self.rank)}
 
-				if key[spin1.ID] == '+' and key[spin2.ID] == '+':
-					self.polarisations[key] = Tensor.tensor(spin1('+'), index1, index2, spin2('+'))
-				elif key[spin1.ID] == '+' and key[spin2.ID] == '-':
-					self.polarisations[key] = Tensor.tensor(spin1('+'), index1, index2, spin2('-'))
-				elif key[spin1.ID] == '-' and key[spin2.ID] == '+':
-					self.polarisations[key] = Tensor.tensor(spin1('-'), index1, index2, spin2('+'))
-				elif key[spin1.ID] == '-' and key[spin2.ID] == '-':
-					self.polarisations[key] = Tensor.tensor(spin1('-'), index1, index2, spin2('-'))
+
+	# Overloading
+
+	## At present, printing a tensor prints only its element array
+	def __str__(self):
+		return self.tensorElements.__str__()
+
+	## Overloading addition for tensors of equal rank, indices and upper/lower lists
+	def __add__(self, other):
+
+		# Assert that rank and type are the same
+		assert isinstance(other, Tensor), "Error: can only add tensor to other tensors!"
+		assert self.rank == other.rank  , "Error: can only add tensors of equal rank!"
+
+		# Assert that indices match
+		for i in range(0, self.rank):
+			assert self.indexList[i] == other.indexList[i] and self.upperlowerList == other.upperlowerList, "Error: to add, tensor indices must match!"
+
+		return Tensor((self.tensorElements + other.tensorElements), self.indexList, self.upperlowerList)
+
+	## Overloading subtraction for tensors of equal rank, indices and upper/lower lists
+	def __sub__(self, other):
+
+		# Assert that rank and type are the same
+		assert isinstance(other, Tensor), "Error: can only add tensor to other tensors!"
+		assert self.rank == other.rank  , "Error: can only add tensors of equal rank!"
+
+		# Assert that indices match
+		for i in range(0, self.rank):
+			assert self.indexList[i] == other.indexList[i] and self.upperlowerList == other.upperlowerList, "Error: to add, tensor indices must match!"
+
+		return Tensor((self.tensorElements - other.tensorElements), self.indexList, self.upperlowerList)
+
+	## Definining negation of tensor elements
+	def __neg__ (self):
+
+		temp = deepcopy(self)
+		temp.tensorElements *= -1.0
+		return temp
+
+	## Defining division by scalars
+	def __div__(self, other):
+		assert isinstance(other, float)    or \
+		       isinstance(other, complex)  or \
+		       isinstance(other, int)     , "Error:  Type Error in tensor __div__!"
+
+		if isinstance(other, int): print "Careful when dividing by ints! Look for rounding errors."
+
+		return Tensor(self.tensorElements/other, self.indexList, self.upperlowerList)
+
+	## Lowers (in the Minkowski space sense) the index specified by the string indx
+	def LowerIndex(self, indx):
+		# Need to 
+		assert isinstance(indx, str), "Error: provide index name as string to lower!"
+		assert self.upperlowerDict[indx] == 'upper', "Error: can't lower a lower index!"
+
+		# metricTensor = self.__class__(metric, [idx, 'placeholder'], ['lower' , 'lower'])
+		count = 2
+		indDict = {}
+		for index in self.indexList:
+			if index == indx:
+				indDict[index] = 1
+				self.upperlowerList[self.indexList.index(index)] = 'lower'
+				self.upperlowerDict[index] = 'lower'
+			elif self.indexList != indx:
+				indDict[index] = count
+				count += 1
+
+		self.tensorElements = np.einsum(metric, [0, 1], self.tensorElements, [indDict[x] for x in self.indexList])
+
+	## Raises (in the Minkowski space sense) the index specified by the string indx
+	def RaiseIndex(self, indx):
+		# Need to 
+		assert isinstance(indx, str), "Error: provide index name as string to lower!"
+		assert self.upperlowerDict[indx] == 'lower', "Error: can't lower a lower index!"
+
+		count = 2
+		indDict = {}
+		for index in self.indexList:
+			if index == indx:
+				indDict[index] = 1
+				self.upperlowerList[self.indexList.index(index)] = 'upper'
+				self.upperlowerDict[index] = 'upper'
+			elif self.indexList != indx:
+				indDict[index] = count
+				count += 1
+
+		self.tensorElements = np.einsum(metric, [0, 1], self.tensorElements, [indDict[x] for x in self.indexList])
+
+
+
+	## Overloading multiplication to take care of contractions/tensor products
+	#  Also handles tensor-scalar multiplication (along with __rmul__ for scalar-tensor)
+	def __mul__(self, other):
+		assert isinstance(other, Tensor)   or \
+		       isinstance(other, float)    or \
+		       isinstance(other, complex)  or \
+		       isinstance(other, int)     , "Error:  Type Error in tensor __mul__!"
+
+		contractedIndices = []
+		indDict = {}
+		count = 0
+		newIndexList = []
+		newUpperLowerList = []
+
+		if isinstance(other, Tensor):
+			for index in self.indexList:
+				indDict[index] = count
+				count += 1
+				if index in other.indexList:
+					contractedIndices.append(index)
+					if (self.upperlowerDict[index] == 'upper' and other.upperlowerDict[index] == 'upper'):
+						other.LowerIndex(index)
+					if (self.upperlowerDict[index] == 'lower' and other.upperlowerDict[index] == 'lower'):
+						other.RaiseIndex(index)
 				else:
-					print "CHECK THIS"
+					newIndexList.append(index)
+					newUpperLowerList.append(self.upperlowerDict[index])
 
-		# If spin1 is a reference spinor
-		elif isinstance(spin1, Spinor.spinor) and isinstance(spin2, Spinor):
+			for index in other.indexList:
+				if index not in contractedIndices:
+					indDict[index] = count
+					count +=1
+					newIndexList.append(index)
+					newUpperLowerList.append(other.upperlowerDict[index])
 
-			# Loop over all polarisations
-			for key in self.polarisations:
+			newTensorElements = np.einsum(self.tensorElements, [indDict[x] for x in self.indexList], \
+				                     other.tensorElements, [indDict[x] for x in other.indexList] )
 
-				if key[spin2.ID] == '+':
-					self.polarisations[key] = Tensor.tensor(spin1, index1, index2, spin2('+'))
-				elif key[spin2.ID] == '-':
-					self.polarisations[key] = Tensor.tensor(spin1, index1, index2, spin2('-'))
-				else:
-					print "CHECK THIS"
+			if newIndexList == []: return newTensorElements
 
-		# If spin1 is a reference spinor
-		elif isinstance(spin1, Spinor) and isinstance(spin2, Spinor.spinor):
-
-			# Loop over all polarisations
-			for key in self.polarisations:
-
-				if key[spin1.ID] == '+':
-					self.polarisations[key] = Tensor.tensor(spin1('+'), index1, index2, spin2)
-
-				elif key[spin1.ID] == '-':
-					self.polarisations[key] = Tensor.tensor(spin1('-'), index1, index2, spin2)
-				else:
-					print "CHECK THIS"
-
-		# Else they are both reference spinors
+			return Tensor(newTensorElements, newIndexList, newUpperLowerList)
 		else:
-			for key in self.polarisations:
-				self.polarisations[key] = Tensor.tensor(spin1, index1, index2, spin2)
+			return Tensor(other*self.tensorElements, self.indexList, self.upperlowerList)
 
-	# Contraction for the full polDictionary Tensor object
-	def contract(self, other1, other2):
+	## Defines scalar-tensor multiplication
+	def __rmul__(self, other):
+		assert isinstance(other, float)    or \
+		       isinstance(other, complex)  or \
+		       isinstance(other, int)     , "Error:  Type Error in tensor __mul__!"
 
-		assert isinstance(other1, polDictionary) or isinstance(other1, LorentzVector) and \
-		       isinstance(other2, polDictionary) or isinstance(other2, LorentzVector), "Cant contract Tensor with non-polDictionary type..."
+		return self.__mul__(other)
 
-		# Index checks
-		assert other1.index != other2.index, "Wrong indices for tensory contraction..."
-		assert other1.index == self.index1 or \
-		       other1.index == self.index2,  "Wrong indices for tensory contraction..."
-		assert other2.index == self.index1 or \
-		       other2.index == self.index2,  "Wrong indices for tensory contraction..."
 
-		temp = {}
 
-		for key in self.polarisations:
+	# Getters and Setters
 
-			tempVar = 0.0
-			sign    = +1
+	## Returns a list of all tensor elements
+	def GetElements(self):
+		return self.tensorElements
 
-			# Loop over tensor
-			for i in range(0, 4):
+	## Returns full list of indices
+	def GetIndices(self):
+		return self.indexList
 
-				for j in range(0, 4):
+	## Returns the list of contra/co- variant states of each index
+	def GetUpperLowerList(self):
+		return self.upperlowerList
 
-					if i == j == 0:
-						sign = +1.0
-					elif i == 0 or j == 0:
-						sign = -1.0
-					else:
-						sign = +1.0
+	## Returns the dictionary of contra/co- variant states of each index. Index name is the key
+	def GetUpperLowerDict(self):
+		return self.upperlowerDict
 
-					if other1.index == self.index1:
-						if isinstance(other1, polDictionary) and isinstance(other2, polDictionary):
-							tempVar += sign * self[key].index1Vec[i][j] * other1[key][j] * other2[key][i]
-						elif isinstance(other1, polDictionary):
-							tempVar += sign * self[key].index1Vec[i][j] * other1[key][j] * other2[i]
-						elif isinstance(other2, polDictionary):
-							tempVar += sign * self[key].index1Vec[i][j] * other1[j] * other2[key][i]
-						else:
-							tempVar += sign * self[key].index1Vec[i][j] * other1[j] * other2[i]
+	## Returns particular element of tensor
+	#  specified by list of ints specifying position
+	def GetElement(self, li):
+		
+		# Assert that list of indices is of corrent length
+		assert len(li) == self.rank, "Error: list of indices does not match rank of tensor"
 
-					elif other2.index == self.index1:
-						if isinstance(other1, polDictionary) and isinstance(other2, polDictionary):
-							tempVar += sign * self[key].index1Vec[i][j] * other1[key][i] * other2[key][j]
-						elif isinstance(other1, polDictionary):
-							tempVar += sign * self[key].index1Vec[i][j] * other1[key][i] * other2[j]
-						elif isinstance(other2, polDictionary):
-							tempVar += sign * self[key].index1Vec[i][j] * other1[i] * other2[key][j]
-						else:
-							tempVar += sign * self[key].index1Vec[i][j] * other1[i] * other2[j]
+		# assert that each element in li is an integer and then arrange into numpy index form
+		indices = []
+		for el in li:
+			assert isinstance(el, int), "Error: To return element, all indices must be integer"
+			indices.append([el])
 
-			temp[key] = tempVar
+		# self.tensorElements[li] returns a single element list and so [0] is added to return correct type
+		return self.tensorElements[li][0]
 
-		return polDictionary(temp)
+	## Set elements of tensor by supplying numpy array
+	def SetElements(self, mat):
+		self.tensorElements = mat
 
-	class tensor:
+	## Set single element of tensor by specifying position to be set and value
+	def SetElement(self, pos, val):
+		
+		# Assert that each element in li is an integer and then arrange into numpy index form
+		indices = []
+		for el in pos:
+			assert isinstance(el, int), "Error: To return element, all indices must be integer"
+			indices.append([el])
 
-		def __init__ (self, spin1, index1, index2, spin2, upper1=True, upper2=True):
+		self.tensorElements[indices] = val
 
-			assert isinstance(spin1, Spinor.spinor) is True and isinstance(spin1, Spinor.spinor) is True, "ERROR! Wrong argument for current..."
+	## Replaces tensor's index list with iList
+	def SetIndices(self, iList):
+		assert len(iList) == self.rank, "Error: length of index list needs to be rank!"
+		self.indexList = [x for x in iList]
 
-			# Save the index
-			self.index1 = index1
-			self.index2 = index2
+	## Replaces tensor's upper/lower list with upper/lower list
+	def SetUpperLowerList(self, ulList):
+		assert len(ulList) == self.rank, "Error: length of upper/lower list needs to be rank!"
+		self.upperlowerList = [x for x in ulList]
+		self.GetUpperLowerDict = {self.indexList[i]: ulList[i] for i in range(0, self.rank)}
 
-			self.upper1 = upper1
-			self.upper2 = upper2
+	# Other methods
 
-			self.index1Vec = []
-			self.index2Vec = []
+	## Defining a transpose (reversing order of all indices) which we
+	#  may want to restrict to only rank 2 tensors
+	def transpose(self):
+		self.indexList = reversed(self.indexList)
 
-			# Calculate 'row' formation of tensor - traversed by first index
-			self.index1Vec.append(LorentzVector((spin1 * gamma[0] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[0] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[0] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[0] * gamma[3] * spin2).item(0), True, index=index1))
 
-			self.index1Vec.append(LorentzVector((spin1 * gamma[1] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[3] * spin2).item(0), True, index=index1))
+# ToDo:
+# Want to allow tensors of general dimension though this would require rewriting 
+# Raise/Lower and prods, etc. to take into acount different metrics
+# Deal with swapping/replacing indices (and therefore corresponding rows and columns) and the corresponding a/symm properties etc.
 
-			self.index1Vec.append(LorentzVector((spin1 * gamma[2] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[3] * spin2).item(0), True, index=index1))
 
-			self.index1Vec.append(LorentzVector((spin1 * gamma[3] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[3] * spin2).item(0), True, index=index1))
 
-			# Calculate 'column' formation of tensor - traversed by second index
-			self.index2Vec.append(LorentzVector((spin1 * gamma[0] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[0] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[0] * spin2).item(0), True, index=index2))
 
-			self.index2Vec.append(LorentzVector((spin1 * gamma[0] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[1] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[1] * spin2).item(0), True, index=index2))
 
-			self.index2Vec.append(LorentzVector((spin1 * gamma[0] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[2] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[2] * spin2).item(0), True, index=index2))
-
-			self.index2Vec.append(LorentzVector((spin1 * gamma[0] * gamma[3] * spin2).item(0), \
-			                                    (spin1 * gamma[1] * gamma[3] * spin2).item(0), \
-			                                    (spin1 * gamma[2] * gamma[3] * spin2).item(0), \
-			                                    (spin1 * gamma[3] * gamma[3] * spin2).item(0), True, index=index2))
-
-		# def __call__(self, id1=None, id2=None):
-
-		# 	if id1 != None and id2 != None:
-
-		# 		if id2 == 0 or id2 == 'T':
-		# 			return self.index1Vec[id1].T()
-		# 		if id2 == 1 or id2 == 'X':
-		# 			return self.index1Vec[id1].X()
-		# 		if id2 == 2 or id2 == 'Y':
-		# 			return self.index1Vec[id1].Y()
-		# 		if id2 == 3 or id2 == 'Z':
-		# 			return self.index1Vec[id1].Z()
-
-		# 	elif id2 == None:
-
-		# 		return self.index1Vec[id1]
-
-		# 	elif id2 == None:
-
-		# 		return self.index2Vec[id2]
-
-		# 	else:
-		# 		print "Function behaviour requires (at least) one index..."
-
-		# Flip the ordering of the indices
-		def transpose(self):
-
-			temp        = self.index1
-			self.index1 = self.index2
-			self.index2 = temp
-
-			temp           = self.index1Vec
-			self.index1Vec = self.index2Vec
-			self.index2Vec = temp
-
-			return self
-
-		def __str__(self):
-
-			return "(" + self.index1 + " = 0) " + str(self.index1Vec[0]) + "\n" \
-			       "(" + self.index1 + " = 1) " + str(self.index1Vec[1]) + "\n" \
-			       "(" + self.index1 + " = 2) " + str(self.index1Vec[2]) + "\n" \
-			       "(" + self.index1 + " = 3) " + str(self.index1Vec[3]) + "\n"
-
-		def __neg__ (self):
-
-			temp = deepcopy(self)
-
-			temp.index1Vec[0] *= -1.0
-			temp.index1Vec[1] *= -1.0
-			temp.index1Vec[2] *= -1.0
-			temp.index1Vec[3] *= -1.0
-			temp.index2Vec[0] *= -1.0
-			temp.index2Vec[1] *= -1.0
-			temp.index2Vec[2] *= -1.0
-			temp.index2Vec[3] *= -1.0
-
-			return temp

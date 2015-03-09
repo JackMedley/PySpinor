@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['g0',['g0',['../namespace_py_spinor_1_1_common.html#a2a57baccead5c121998cb60965799fe8',1,'PySpinor::Common']]],
+  ['g1',['g1',['../namespace_py_spinor_1_1_common.html#a4b487069e849d29175891940aebb04c7',1,'PySpinor::Common']]],
+  ['g2',['g2',['../namespace_py_spinor_1_1_common.html#a980d98349414f5a8bcef127d76f0a049',1,'PySpinor::Common']]],
+  ['g3',['g3',['../namespace_py_spinor_1_1_common.html#a6a1b904f2b67bd75f07e7bd2c7449c2c',1,'PySpinor::Common']]],
+  ['g5',['g5',['../namespace_py_spinor_1_1_common.html#a88d9f9a7a24db07e6bef864a25c04c3d',1,'PySpinor::Common']]],
+  ['g_5fs',['g_s',['../namespace_py_spinor_1_1_common.html#a95db89c1a8d7f2bd987a2fb50f2bbfa3',1,'PySpinor::Common']]],
+  ['gamma',['gamma',['../namespace_py_spinor_1_1_common.html#a1b76950c94d4a30428a6c3c3bc7cc78f',1,'PySpinor::Common']]],
+  ['getelement',['GetElement',['../class_py_spinor_1_1_tensor_1_1_tensor.html#aeb9b9d580cc278d3d82c3ae6e170e162',1,'PySpinor::Tensor::Tensor']]],
+  ['getelements',['GetElements',['../class_py_spinor_1_1_tensor_1_1_tensor.html#a38778134828ac330a8fd47db7adecd41',1,'PySpinor::Tensor::Tensor']]],
+  ['getindices',['GetIndices',['../class_py_spinor_1_1_tensor_1_1_tensor.html#aea7739cc1baad06bca6a8ab7ba3cc95c',1,'PySpinor::Tensor::Tensor']]],
+  ['getlatex',['getLaTeX',['../class_py_spinor_1_1spinor_string_1_1spinor_string.html#abb012d0d474023b69d3fcbc75da92507',1,'PySpinor::spinorString::spinorString']]],
+  ['getmomentum',['getMomentum',['../class_py_spinor_1_1_spinor_1_1_spinor.html#ab4a660f4882baa072d3c06845fae9fa7',1,'PySpinor::Spinor::Spinor']]],
+  ['getpolarisation',['getPolarisation',['../class_py_spinor_1_1_spinor_1_1_spinor_1_1spinor.html#aa24c84582fe66fb8c3faf9ac2d154d33',1,'PySpinor::Spinor::Spinor::spinor']]],
+  ['getpolarisations',['getPolarisations',['../class_py_spinor_1_1pol_dictionary_1_1pol_dictionary.html#ad6894204400171c538f4b1266acfed28',1,'PySpinor::polDictionary::polDictionary']]],
+  ['getupperlowerdict',['GetUpperLowerDict',['../class_py_spinor_1_1_tensor_1_1_tensor.html#aa8cb1d63adaf4edd0924c6eb57e3854f',1,'PySpinor.Tensor.Tensor.GetUpperLowerDict()'],['../class_py_spinor_1_1_tensor_1_1_tensor.html#a1d741384d227a9eeec15ba61685fa436',1,'PySpinor.Tensor.Tensor.GetUpperLowerDict(self)']]],
+  ['getupperlowerlist',['GetUpperLowerList',['../class_py_spinor_1_1_tensor_1_1_tensor.html#a5db7ef36bb183c503a300ae40c22a55c',1,'PySpinor::Tensor::Tensor']]],
+  ['getvector',['getVector',['../class_py_spinor_1_1_spinor_1_1_spinor_1_1spinor.html#a8978e7ce7a8062bc89a49869f56f6a7d',1,'PySpinor::Spinor::Spinor::spinor']]],
+  ['gluon',['Gluon',['../class_py_spinor_1_1_gluon_1_1_gluon.html',1,'PySpinor::Gluon']]],
+  ['gluon_2epy',['Gluon.py',['../_gluon_8py.html',1,'']]]
+];
