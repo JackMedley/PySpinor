@@ -87,7 +87,10 @@ class polDictionary(object):
 
 	def __getitem__(self, i):
 
-		return self.polarisations[i]
+		try:
+			return self.polarisations[i]
+		except:
+			return [self.polarisations[x] for x in i]
 
 	def __neg__ (self):
 
@@ -177,7 +180,6 @@ class polDictionary(object):
 				temp += self.polarisations[pols]
 
 			return temp
-
 
 	def __add__(self, other):
 
@@ -323,3 +325,4 @@ class polDictionary(object):
 		else:
 			# Return the dictionary
 			return temp
+

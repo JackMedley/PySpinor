@@ -41,3 +41,4 @@ class Gluon(object):
 			return self.vector['+']
 		elif pol == '-':
 			return self.vector['-']
+

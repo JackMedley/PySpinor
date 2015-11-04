@@ -9,7 +9,7 @@ def s(p, q):
 	assert isinstance(p, LorentzVector) is True and \
 	       isinstance(q, LorentzVector) is True, "ERROR! s called with massive (or non-) LorentzVector..."
 
-	return 2.0 * p.dot(q)
+	return (p + q) ** 2
 
 def abs2(complexVar):
 

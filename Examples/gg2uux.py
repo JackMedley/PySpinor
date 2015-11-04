@@ -2,8 +2,7 @@
 
 # Import spinor library
 import PySpinor as pys
-from   PySpinor import Common
-from   Common   import *
+from PySpinor.Common import *
 
 #
 # Define momenta and spinors
@@ -11,21 +10,21 @@ from   Common   import *
 
 pa = pys.Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00, 7.500000e+02, incoming=True)  # Incoming gluon
 pb = pys.Momenta(7.500000e+02, 0.000000e+00, 0.000000e+00,-7.500000e+02, incoming=True)  # Incoming gluon
-p1 = pys.Momenta(7.500000e+02, 1.663864e+02, 6.672462e+02,-2.993294e+02)		     # Outgoing ux
-p2 = pys.Momenta(7.500000e+02,-1.663864e+02,-6.672462e+02, 2.993294e+02)		     # Outgoing u
+p1 = pys.Momenta(7.500000e+02, 1.663864e+02, 6.672462e+02,-2.993294e+02)		 # Outgoing ux
+p2 = pys.Momenta(7.500000e+02,-1.663864e+02,-6.672462e+02, 2.993294e+02)		 # Outgoing u
 
 # Check the phase space point conserves momentum
 assert pys.Momenta.Conserved() is True, "ERROR! Momentum not conserved..."
 
+# Define spinors
 u_a = pys.Spinor(pa)
 u_b = pys.Spinor(pb)
-u_1 = pys.Spinor(p1)
 v_1 = pys.Spinor(p1, fermion=False)
 u_2 = pys.Spinor(p2)
 
 # Select only one polarisation
-pols = [('+', '-', '+', '-')]
-pol  = pols[0]
+pols = [('+', '-', '+', '-'), ('+', '+', '+', '-')]
+# pols = pols[1]
 
 # Define the gluon currents
 Gluon_a = pys.Gluon(pa, p1, 'nu')['+']
@@ -41,7 +40,7 @@ term_3 = pys.Current(u_2.bar(), 'mu', v_1).dot(Gluon_b) * Gluon_a.dot(pb)
 
 A_s = (term_1 + 2.0 * term_2 - 2.0 * term_3) / pys.s(pa, pb)
 
-print "   -> A_s = ", A_s[pol]
+print "   -> A_s = ", A_s[pols]
 
 #
 # t-channel
@@ -52,7 +51,7 @@ term_4 += pys.Current(u_2.bar(), 'mu', u_a('-')).dot(Gluon_b) * pys.Current(u_a.
 
 A_t = - i * term_4 / pys.s(pa, p1)
 
-print "   -> A_t = ", A_t[pol]
+print "   -> A_t = ", A_t[pols]
 
 #
 # u-channel
@@ -65,7 +64,7 @@ term_6 += pys.Current(u_2.bar(), 'mu', u_2('-')).dot(Gluon_a) * pys.Current(u_2.
 
 A_u = i * (term_5 - term_6) / pys.s(pa, p2)
 
-print "   -> A_u = ", A_u[pol]
+print "   -> A_u = ", A_u[pols]
 
 #
 # Form colour flow amplitudes for each polarisation

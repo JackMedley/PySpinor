@@ -144,3 +144,4 @@ class Current(polDictionary):
 				                    (spin1 * gamma[3] * spin2).item(0)])
 
 			LorentzVector.__init__(self, vector.item(0), vector.item(1), vector.item(2), vector.item(3), upper=True, index=self.index)
+
