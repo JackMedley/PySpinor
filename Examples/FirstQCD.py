@@ -41,3 +41,4 @@ Amplitude = prefactor * cur_1.dot(cur_2).sum(pol) * avgFactor() * 3.0
 
 # Return the result
 print Amplitude, 'GeV'
+

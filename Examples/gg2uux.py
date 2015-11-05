@@ -23,7 +23,7 @@ v_1 = pys.Spinor(p1, fermion=False)
 u_2 = pys.Spinor(p2)
 
 # Select only one polarisation
-pols = [('+', '-', '+', '-'), ('+', '+', '+', '-')]
+pols = [('+', '+', '+', '-')]
 # pols = pols[1]
 
 # Define the gluon currents

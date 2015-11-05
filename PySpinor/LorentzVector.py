@@ -65,7 +65,7 @@ class LorentzVector(object):
 		assert self.upper == other.upper, "ERROR!  Can't subtract LorentzVectors with co and contra indices!"
 
 		assert isinstance(other, LorentzVector), "ERROR! Can only subtract LorentzVector from LorentzVector"
-		
+
 		return LorentzVector(self.T() - other.T(), self.X() - other.X(), self.Y() - other.Y(), self.Z() - other.Z(), self.upper)
 
 
@@ -141,14 +141,10 @@ class LorentzVector(object):
 		if other == None:
 			return False
 
-		if (self.T() - other.T()) > TOLERANCE:
-			return False
-		if (self.X() - other.X()) > TOLERANCE:
-			return False
-		if (self.Y() - other.Y()) > TOLERANCE:
-			return False
-		if (self.Z() - other.Z()) > TOLERANCE:
-			return False
+		if (self.T() - other.T()) > TOLERANCE: return False
+		if (self.X() - other.X()) > TOLERANCE: return False
+		if (self.Y() - other.Y()) > TOLERANCE: return False
+		if (self.Z() - other.Z()) > TOLERANCE: return False
 
 		return True
 
@@ -174,8 +170,6 @@ class LorentzVector(object):
 			temp = metric * self.vector.transpose()
 		else:
 			temp = self.vector.transpose()
-
-		j = complex(0.0, 0.0)
 
 		return temp.item(0) * gamma[0] + \
 		       temp.item(1) * gamma[1] + \
@@ -253,3 +247,4 @@ class LorentzVector(object):
 
 		# Return the new LorentzVector
 		return LorentzVector(temp.e(), temp.pX(), temp.pY(), temp.pZ(), vector.upper)
+

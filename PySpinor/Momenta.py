@@ -136,12 +136,8 @@ class Momenta(LorentzVector):
 		mass = self.mass()
 
 		if mass <= 0:
-
 			print "ERROR!  No need to decompose massless momenta..."
 			return
-
-		# We can always boost the massive momenta to this one
-		restFrameMomenta = Momenta(mass, 0.0,  0.0,  0.0, physical=False)
 
 		# This can in turn be written as a linear combination of...
 		basisVec1 = Momenta(mass,  mass, 0.0, 0.0, physical=False)
@@ -167,7 +163,7 @@ class Momenta(LorentzVector):
 		assert self.upper == other.upper, "ERROR!  Can't add momenta with co and contra indices!"
 
 		assert isinstance(other, Momenta), "ERROR! Can only add momenta to momenta"
-		
+
 		return Momenta(self.T() + other.T(), self.X() + other.X(), self.Y() + other.Y(), self.Z() + other.Z(), upper=self.upper, incoming=self.incoming, physical=False)
 
 	def __sub__(self, other):
@@ -184,12 +180,12 @@ class Momenta(LorentzVector):
 		       isinstance(other, float)     is True or \
 		       isinstance(other, complex)   is True or \
 		       isinstance(other, int)       is True, "ERROR!  Type Error in momenta mul..."
-			
+
 		if isinstance(other, np.matrix):
 			temp = self.vector * other
 			return Momenta(temp.item(0), temp.item(1), temp.item(2), temp.item(3), upper=self.upper, incoming=self.incoming, physical=False)
 		else:
-			return Momenta(other * self.T(), other * self.X(), other * self.Y(), other * self.Z(), upper=self.upper, incoming=self.incoming, physical=False)		       
+			return Momenta(other * self.T(), other * self.X(), other * self.Y(), other * self.Z(), upper=self.upper, incoming=self.incoming, physical=False)
 
 	def __rmul__(self, other):
 
@@ -208,7 +204,7 @@ class Momenta(LorentzVector):
 
 		assert (isinstance(other, float) or isinstance(other, complex) or isinstance(other, int)), "ERROR!  Cant divide Momenta by non-float/complex/int type!"
 
-		return Momenta(self.T() / other, self.X() / other, self.Y() / other, self.Z() / other, upper=self.upper, incoming=self.incoming, physical=False)		
+		return Momenta(self.T() / other, self.X() / other, self.Y() / other, self.Z() / other, upper=self.upper, incoming=self.incoming, physical=False)
 
 
 
